@@ -1,0 +1,14 @@
+<Application xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="ScaleStudio.App.App" RequestedThemeVariant="Light">
+  <Application.Resources>
+    <SolidColorBrush x:Key="AccentBrush" Color="#176B87" />
+    <SolidColorBrush x:Key="ControlTextBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="InputBackgroundBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="InputTextBrush" Color="#172B40" />
+    <x:Double x:Key="ControlFontSize">20</x:Double>
+    <FontFamily x:Key="ControlFontFamily">sans-serif</FontFamily>
+  </Application.Resources>
+  <Application.Styles>
+    <FluentTheme />
+    <StyleInclude Source="avares://ScaleStudio.App/Styles/Controls.axaml" />
+  </Application.Styles>
+</Application>

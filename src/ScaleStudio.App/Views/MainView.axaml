@@ -1,0 +1,35 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="ScaleStudio.App.Views.MainView" x:CompileBindings="False">
+  <ScrollViewer>
+    <StackPanel Margin="20" Spacing="14">
+      <TextBlock Text="ScaleStudio" FontSize="28" FontWeight="Bold"/>
+      <Border Background="#E8F4F6" CornerRadius="12" Padding="20">
+        <StackPanel Spacing="8">
+          <TextBlock Text="当前重量" FontSize="20"/>
+          <TextBlock Text="{Binding Weight}" FontSize="56" FontWeight="Bold" Foreground="#176B87"/>
+          <TextBlock Text="{Binding Stable}" FontSize="20"/>
+          <TextBlock Text="{Binding Status}" TextWrapping="Wrap"/>
+        </StackPanel>
+      </Border>
+      <WrapPanel>
+        <Button Margin="0,0,8,8" Content="开始称重" Command="{Binding StartCommand}"/>
+        <Button Margin="0,0,8,8" Content="停止称重" Command="{Binding StopCommand}"/>
+        <Button Margin="0,0,8,8" Content="保存记录" Command="{Binding SaveCommand}"/>
+        <Button Margin="0,0,8,8" Content="查看记录" Command="{Binding HistoryCommand}"/>
+      </WrapPanel>
+      <TextBlock Text="参数设置" FontSize="22" FontWeight="Bold"/>
+      <TextBlock Text="连接方式"/>
+      <ComboBox ItemsSource="{Binding Devices}" SelectedItem="{Binding Device}" HorizontalAlignment="Stretch"/>
+      <TextBlock Text="串口名称（桌面端）"/>
+      <TextBox Text="{Binding Port}"/>
+      <CheckBox Content="主动轮询（否则只接收）" IsChecked="{Binding Poll}"/>
+      <TextBlock Text="协议正则表达式"/>
+      <TextBox Text="{Binding Pattern}" TextWrapping="Wrap" AcceptsReturn="False"/>
+      <WrapPanel>
+        <Button Margin="0,0,8,8" Content="保存配置" Command="{Binding SettingsCommand}"/>
+        <Button Margin="0,0,8,8" Content="读取配置" Command="{Binding LoadCommand}"/>
+      </WrapPanel>
+      <TextBlock Text="最近称重记录" FontSize="22" FontWeight="Bold"/>
+      <TextBlock Text="{Binding History}" TextWrapping="Wrap"/>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

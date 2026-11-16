@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-android34.0</TargetFramework>
+    <OutputType>Exe</OutputType><SupportedOSPlatformVersion>24</SupportedOSPlatformVersion><ApplicationId>org.scalestudio.template</ApplicationId><ApplicationTitle>ScaleStudio</ApplicationTitle><ApplicationVersion>1</ApplicationVersion><ApplicationDisplayVersion>0.1.0</ApplicationDisplayVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Android" />
+    <ProjectReference Include="../ScaleStudio.App/ScaleStudio.App.csproj" />
+  </ItemGroup>
+</Project>

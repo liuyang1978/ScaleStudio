@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net8.0</TargetFramework><IsTestProject>true</IsTestProject><IsPackable>false</IsPackable></PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" PrivateAssets="all" />
+    <ProjectReference Include="../../src/ScaleStudio.Weighing/ScaleStudio.Weighing.csproj" />
+    <ProjectReference Include="../../src/ScaleStudio.Configuration/ScaleStudio.Configuration.csproj" />
+    <ProjectReference Include="../../src/ScaleStudio.Storage/ScaleStudio.Storage.csproj" />
+  </ItemGroup>
+</Project>
