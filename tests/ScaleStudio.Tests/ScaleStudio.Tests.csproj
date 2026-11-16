@@ -8,4 +8,9 @@
     <ProjectReference Include="../../src/ScaleStudio.Configuration/ScaleStudio.Configuration.csproj" />
     <ProjectReference Include="../../src/ScaleStudio.Storage/ScaleStudio.Storage.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ScaleStudio.Logging\ScaleStudio.Logging.csproj" />
+    <ProjectReference Include="..\..\src\ScaleStudio.Scanning\ScaleStudio.Scanning.csproj" />
+  </ItemGroup>
 </Project>
+

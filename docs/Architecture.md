@@ -10,3 +10,6 @@
 - 示例协议假设 ASCII、换行分帧，sg/wg 稳定含义仅为示例，必须按真实仪表手册配置。
 - 不实现法定计量认证；稳定标识不等于经检定的称重结果。
 
+
+
+Logging 与 Scanning 为独立 net8.0 模块，App 引用，详见 LoggingScanning.md。
