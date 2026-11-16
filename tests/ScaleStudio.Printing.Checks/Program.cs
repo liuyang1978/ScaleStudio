@@ -1,0 +1,12 @@
+using ScaleStudio.Tests;
+using ScaleStudio.Printing;
+var tests=new PrintingTests();
+tests.TemplatesRoundTrip();
+tests.RejectsInvalidPrintableArea();
+tests.MissingVariableFailsBeforePrinting();
+await tests.PrinterMustBeExplicitlySelected();
+tests.CodesCanBeDecoded(ElementKind.Barcode,"123456789012");
+tests.CodesCanBeDecoded(ElementKind.QrCode,"称重记录-123456");
+tests.InvalidElementCollectionsAreRejected();
+tests.ReceiptsWrapAndPaginateWithinPaper();
+Console.WriteLine("PASS: 8 printing checks (direct invocation; not vstest)");

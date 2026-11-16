@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net8.0</TargetFramework><OutputType>WinExe</OutputType></PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop"/>
+    <PackageReference Include="System.Drawing.Common"/>
+    <ProjectReference Include="../ScaleStudio.App/ScaleStudio.App.csproj"/>
+    <Compile Include="../ScaleStudio.Desktop/WindowsPagePrinter.cs" Link="WindowsPagePrinter.cs"/>
+  </ItemGroup>
+</Project>

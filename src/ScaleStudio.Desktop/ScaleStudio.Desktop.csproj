@@ -4,8 +4,10 @@
     <OutputType>WinExe</OutputType>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" />
     <PackageReference Include="Avalonia.Desktop" />
     <PackageReference Include="System.IO.Ports" />
     <ProjectReference Include="../ScaleStudio.App/ScaleStudio.App.csproj" />
   </ItemGroup>
 </Project>
+

@@ -5,7 +5,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 namespace ScaleStudio.Printing;
 
-public enum ElementKind { Text, Line, Rectangle }
+public enum ElementKind { Text, Line, Rectangle, Barcode, QrCode }
 public sealed record PrintElement
 {
     public ElementKind Kind { get; init; }
@@ -39,8 +39,9 @@ public sealed record PrintTemplate
         if (new[] { LeftMargin, TopMargin, RightMargin, BottomMargin }.Any(v => !double.IsFinite(v) || v < 0)
             || LeftMargin + RightMargin >= Width || TopMargin + BottomMargin >= Height)
             throw new ArgumentException("Invalid printable area.");
+        if (Elements is null || Elements.Count > 2000) throw new ArgumentException("Invalid element list.");
         foreach (var e in Elements)
-            if (!Enum.IsDefined(e.Kind) || !double.IsFinite(e.X) || !double.IsFinite(e.Y) || !double.IsFinite(e.Rotation)
+            if (e is null || e.Text is null || string.IsNullOrWhiteSpace(e.FontFamily) || !Enum.IsDefined(e.Kind) || !double.IsFinite(e.X) || !double.IsFinite(e.Y) || !double.IsFinite(e.Rotation)
                 || !Positive(e.Width) || !Positive(e.Height) || !Positive(e.FontSize))
                 throw new ArgumentException("Invalid print element.");
     }
@@ -77,6 +78,7 @@ public static class SvgRenderer
                 ElementKind.Text => $"<text y=\"{N(element.FontSize)}\" font-size=\"{N(element.FontSize)}\" font-family=\"{E(element.FontFamily)}\">{E(text)}</text>",
                 ElementKind.Line => $"<line x2=\"{N(element.Width)}\" y2=\"{N(element.Height)}\" stroke=\"black\" stroke-width=\"0.2\"/>",
                 ElementKind.Rectangle => $"<rect width=\"{N(element.Width)}\" height=\"{N(element.Height)}\" fill=\"none\" stroke=\"black\" stroke-width=\"0.2\"/>",
+                ElementKind.Barcode or ElementKind.QrCode => Codes.ToSvg(element, text),
                 _ => throw new ArgumentException("Unknown element")
             });
             svg.Append("</g>");

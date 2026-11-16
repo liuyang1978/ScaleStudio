@@ -12,6 +12,8 @@ namespace ScaleStudio.App;
 
 public sealed partial class App : Application
 {
+    public static ScaleStudio.Printing.IPagePrinter? PagePrinter { get; set; }
+    public static bool DesignerOnly { get; set; }
     public static Func<string, IWeightTransport>? SerialFactory { get; set; }
     public static string DataDirectory { get; set; } =
         Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ScaleStudio");
@@ -31,7 +33,7 @@ public sealed partial class App : Application
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             var window = new Window { Title = "ScaleStudio", Width = 1024, Height = 768,
-                MinWidth = 480, MinHeight = 480, Content = view };
+                MinWidth = 480, MinHeight = 480, Content = DesignerOnly ? new ScrollViewer { Content = new PrintDesigner() } : view };
             bool closing = false;
             bool capture = false;
             window.AddHandler(Avalonia.Input.InputElement.KeyDownEvent, (_, e) =>
