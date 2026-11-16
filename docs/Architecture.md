@@ -13,3 +13,5 @@
 
 
 Logging 与 Scanning 为独立 net8.0 模块，App 引用，详见 LoggingScanning.md。
+
+App 引用 Printing.Labels、Printing.Receipts、Printing.Invoices；三者依赖无 UI 的 Printing 核心。

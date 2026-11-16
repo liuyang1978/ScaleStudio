@@ -1,4 +1,4 @@
-<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="ScaleStudio.App.Views.MainView" x:CompileBindings="False">
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:views="using:ScaleStudio.App.Views" x:Class="ScaleStudio.App.Views.MainView" x:CompileBindings="False">
   <ScrollViewer>
     <StackPanel Margin="20" Spacing="14">
       <TextBlock Text="ScaleStudio" FontSize="28" FontWeight="Bold"/>
@@ -30,6 +30,8 @@
       </WrapPanel>
       <TextBlock Text="最近称重记录" FontSize="22" FontWeight="Bold"/>
       <TextBlock Text="{Binding History}" TextWrapping="Wrap"/>
+      <views:PrintDesigner/>
     </StackPanel>
   </ScrollViewer>
 </UserControl>
+

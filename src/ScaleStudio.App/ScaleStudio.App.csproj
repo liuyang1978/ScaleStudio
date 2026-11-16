@@ -13,6 +13,10 @@
   <ItemGroup>
     <ProjectReference Include="..\ScaleStudio.Logging\ScaleStudio.Logging.csproj" />
     <ProjectReference Include="..\ScaleStudio.Scanning\ScaleStudio.Scanning.csproj" />
+    <ProjectReference Include="..\ScaleStudio.Printing.Labels\ScaleStudio.Printing.Labels.csproj" />
+    <ProjectReference Include="..\ScaleStudio.Printing.Receipts\ScaleStudio.Printing.Receipts.csproj" />
+    <ProjectReference Include="..\ScaleStudio.Printing.Invoices\ScaleStudio.Printing.Invoices.csproj" />
+    <ProjectReference Include="..\ScaleStudio.Printing\ScaleStudio.Printing.csproj" />
   </ItemGroup>
 </Project>
 

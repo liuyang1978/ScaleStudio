@@ -11,6 +11,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\ScaleStudio.Logging\ScaleStudio.Logging.csproj" />
     <ProjectReference Include="..\..\src\ScaleStudio.Scanning\ScaleStudio.Scanning.csproj" />
+    <ProjectReference Include="..\..\src\ScaleStudio.Printing.Labels\ScaleStudio.Printing.Labels.csproj" />
+    <ProjectReference Include="..\..\src\ScaleStudio.Printing.Receipts\ScaleStudio.Printing.Receipts.csproj" />
+    <ProjectReference Include="..\..\src\ScaleStudio.Printing.Invoices\ScaleStudio.Printing.Invoices.csproj" />
+    <ProjectReference Include="..\..\src\ScaleStudio.Printing\ScaleStudio.Printing.csproj" />
   </ItemGroup>
 </Project>
 
